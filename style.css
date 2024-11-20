@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    border: 0;
+    outline: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+:root {
+    --input-background: #686868;
+    --primary-color: #4a024a;
+    --secondary-color: white;
+    --note-background: #545353;
+}
+
+body {
+    background: linear-gradient(var(--input-background), black);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: all .2s ease;
+}
+
+.newcontainer {
+    /* display: flex; */
+
+    align-self: center;
+    width: 400px;
+    height: 50px;
+    margin: 30px auto 30px;
+    /* align-items: center; */
+}
+
+.newcontainer hr {
+    height: 190px;
+
+}
+
+.newcontainer button {
+    width: 100%;
+    height: 50px;
+    background: var(--input-background);
+    opacity: 50%;
+    color: snow;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+    margin: auto;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.newcontainer button:hover {
+    opacity: 0.8;
+    outline: solid 3px whitesmoke;
+    color: snow;
+    text-shadow: 2px 2px 5px var(--note-background);
+    transition: all .2s;
+}
+
+.search_container {
+    display: flex;
+    position: absolute;
+    border-radius: 10px;
+    background: transparent;
+    margin-left: 76%;
+    margin-top: -90px;
+}
+
+.search_container:hover {
+    outline: solid 2px whitesmoke;
+    transition: all .2s;
+
+    button {
+        outline: solid 2px whitesmoke;
+        transition: all .1s;
+    }
+}
+
+.search_container h1 {
+    display: flex;
+    position: absolute;
+    color: snow;
+    filter: saturate(0);
+    margin-top: -25px;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px #343434;
+}
+
+.search_container input {
+    border-radius: 10px;
+    background-color: var(--note-background);
+    filter: drop-shadow();
+    padding: 5px 10px 5px;
+    color: snow;
+    box-shadow: 4px 3px 10px #373737;
+}
+
+.search_container input:hover {
+    outline: solid 2px whitesmoke;
+    transition: all .1s;
+}
+
+.search_container button {
+    margin-left: 280px;
+    margin-top: -2px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url("images/search.png");
+    background-color: var(--note-background);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18.8px 22.5px;
+    border-radius: 10px;
+    box-shadow: 4px 3px 10px #373737;
+    cursor: pointer;
+}
+
+#search_btn:hover {
+    outline: solid 2px whitesmoke;
+    transition: all .1s;
+}
+
+.textlabel {
+    margin: 0px auto 90px;
+    width: 10%;
+}
+
+.textlabel h1 {
+    color: snow;
+    margin-top: 20%;
+    margin-right: 10%;
+    cursor: pointer;
+    filter: saturate(0);
+    text-shadow: 2px 2px 4px #000;
+}
+
+.textlabel img {
+    margin-top: -70px;
+    margin-left: 100px;
+
+    position: absolute;
+    width: 100px;
+    filter: saturate(0);
+    cursor: pointer;
+}
+
+.container {
+    margin: 0 10px;
+    display: none;
+    margin-top: 80px;
+    height: 500px;
+    background: var(--input-background);
+    filter: opacity(50%);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.container:hover {
+    outline: solid 3px whitesmoke;
+    filter: opacity(80%);
+    transition: all .3s;
+
+    button[name="container_delete"] {
+        filter: brightness(1);
+    }
+
+    textarea {
+        box-shadow: 4px 3px 10px #373737;
+        transition: all .1s;
+    }
+
+    .newnote button {
+        box-shadow: 4px 3px 10px #373737;
+        transition: all .1s;
+    }
+
+    input:not(.note input) {
+        outline: solid 3px whitesmoke;
+        transition: all .1s;
+    }
+
+}
+
+/* span[name="area"] {
+    position: absolute;
+    margin: -60px -10px;
+    width: 340px;
+    height: 50px;
+} */
+
+button[name="container_delete"] {
+    filter: brightness(.5);
+}
+
+span[name="container_delete_span"] {
+    margin-left: -3px;
+}
+
+button[name="container_delete"]:hover {
+    filter: brightness(1);
+
+    span {
+        opacity: 1;
+    }
+}
+
+
+.container input {
+    position: absolute;
+    color: antiquewhite;
+    background: var(--input-background);
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    margin-top: -55px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.container>input:not(.note input):hover {
+    outline: solid 2px whitesmoke;
+    transition: all .1s;
+}
+
+.container button {
+    display: flex;
+    position: absolute;
+    margin-top: -52px;
+    margin-left: 290px;
+    background-image: url("images/delete.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+.container span {
+    display: flex;
+    position: absolute;
+    background-image: url("images/delete.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.container span:hover {
+    filter: blur(5px);
+    transition: all .1s;
+
+    .container input {
+        outline: solid whitesmoke;
+    }
+}
+
+
+.note {
+    display: flex;
+    max-height: 200px;
+    width: 341px;
+    background: transparent;
+}
+
+.note ::placeholder {
+    opacity: 0;
+    /* Firefox */
+}
+
+
+
+
+.note:hover {
+    transition: all .3s;
+
+    ::placeholder {
+        opacity: .3;
+        transition: all .3s;
+    }
+
+    input.editable::placeholder {
+        opacity: 1;
+        transition: all .3s;
+    }
+
+    textarea.editable::placeholder {
+        opacity: 1;
+        transition: all .3s;
+    }
+
+
+
+    button {
+        filter: brightness(1);
+        transition: all .1s;
+    }
+
+    span {
+        filter: brightness(1);
+        transition: all .1s;
+    }
+
+    input {
+        color: snow;
+        text-shadow: 4px 3px 10px #000;
+        border-bottom: 2px solid #7f7f7f;
+        transition: all .1s;
+    }
+
+    textarea {
+
+        text-shadow: 4px 3px 10px #000000;
+        outline: solid whitesmoke;
+        box-shadow: 4px 3px 10px #373737;
+        transition: all .1s;
+    }
+}
+
+.note input {
+    display: flex;
+    position: absolute;
+    color: #fffafa69;
+    margin: 3px 10px 10px;
+    border-radius: 0;
+    background-color: transparent;
+    width: 240px;
+    height: 30px;
+    font-family: "Dancing Script";
+    cursor: no-drop;
+}
+
+
+
+.note button {
+    display: flex;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 300px;
+    background-image: url("images/edit.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: brightness(.5);
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+.note button[name="note_delete"] {
+    margin-top: 10px;
+    margin-left: 265px;
+    background-image: url("images/delete.png");
+}
+
+.note button[name="note_delete"]:hover {
+    span {
+        filter: blur(5px);
+        opacity: 1;
+        transition: all .3s;
+    }
+}
+
+.note button[name="edit_note"]:hover {
+    span {
+        opacity: 1;
+        filter: blur(5px);
+        opacity: 1;
+        transition: all .3s;
+    }
+}
+
+.note span[name="note_delete_span"] {
+    background-image: url("images/delete.png");
+}
+
+.note span {
+    display: flex;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -4px;
+    background-image: url("images/edit.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.note span:hover {
+    filter: blur(5px);
+    transition: all .3s;
+}
+
+.note textarea {
+    background-color: var(--note-background);
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 35px;
+    color: #fdfdfd93;
+    max-height: 200px;
+    width: 500px;
+    margin-right: 10px;
+    font-family: "Dancing Script";
+    resize: none;
+    cursor: no-drop;
+}
+
+.note textarea:hover {
+    outline: solid whitesmoke;
+    box-shadow: 4px 3px 10px #373737;
+    transition: all .1s;
+}
+
+.newnote {
+    display: flex;
+    max-height: 200px;
+    width: 200px;
+    opacity: .8;
+    background: transparent;
+    align-items: center;
+}
+
+.newnote button {
+    display: block;
+    background: var(--note-background);
+    color: #fffafa69;
+    font-size: 100px;
+    width: 150px;
+    height: 150px;
+    margin: auto 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.newnote button:hover {
+    outline: solid whitesmoke;
+    color: snow;
+    text-shadow: 4px 3px 10px #282727;
+    box-shadow: 4px 3px 10px #373737;
+    transition: all .1s;
+}

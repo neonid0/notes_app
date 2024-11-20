@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="textlabel">
+            <h1>Notes</h1>
+            <img src="images/notes.png" id="note_image">
+        </div>
+        <div class="search_container">
+            <h1>Search</h1>
+            <input type="text" name="search" id="search">
+            <button id="search_btn"></button>
+
+        </div>
+        <div class="container" id="container">
+            <input id="container_label" for="container" placeholder="note">
+            <button id="container_delete"></button>
+            <span id="container_delete_span"></span>
+
+            <div class="note" id="note">
+                <input type="text" name="note_label" id="note_label" placeholder="Label">
+                <button id="edit_note"></button>
+                <textarea name="notearea" id="notearea" placeholder="Write something.."></textarea>
+            </div>
+
+            <div class="newnote" id="newnote">
+                <button id="newnote_btn">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="newcontainer">
+        <hr id="newcontainer_sep">
+        <button id="newcontainer_btn">New Box</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
