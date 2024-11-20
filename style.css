@@ -19,6 +19,8 @@ body {
     background: linear-gradient(var(--input-background), black);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: top;
+    min-height: 100vh;
     transition: all .2s ease;
 }
 
@@ -90,6 +92,7 @@ body {
 
 .search_container input {
     border-radius: 10px;
+    min-width: 250px;
     background-color: var(--note-background);
     filter: drop-shadow();
     padding: 5px 10px 5px;
